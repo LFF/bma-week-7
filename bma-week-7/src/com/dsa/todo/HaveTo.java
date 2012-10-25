@@ -1,5 +1,7 @@
 package com.dsa.todo;
 
+import java.util.Date;
+
 
    // uses extends to use abstract class TODO
 
@@ -10,11 +12,26 @@ package com.dsa.todo;
 
    //  not ready to work with actual dates
     
+  //   due date belong to have to tods  but not to  want to dos
+
+
+
+
 
 
 public class HaveTo extends ToDo {
 	
-	       String todoDueDt;
+	       Date  todoDueDt;
+	       
+	       int   dueMonth;
+	       int   dueDay;
+	       int   dueYear;
+	       
+	       
+	       
+	       
+	       
+	       
 	  
 	
 	public HaveTo() {		
@@ -23,40 +40,57 @@ public class HaveTo extends ToDo {
 	}
     
 
-	  public   HaveTo(String todoDesc)  { 
+	  public   HaveTo(String todoDesc, int dueMonth, int dueDay, int dueYear)  { 
 	           
 		        super(todoDesc);
-		        todoDueDt = "due tomorrow";
+		        
+		 this.dueMonth = dueMonth;
+		 this.dueDay = dueDay;
+		 this.dueYear = dueYear;
 		        
 	     
 	          }     
-		     
 	  
-		
-	  // overrides  to string in abstract todo class
+	  
+      
+// Accessor methods	 	
+      
+public   	 int getToDoDay (){ return dueDay;}
+  	 
+
+public   	 int getToDoMonth (){ return dueMonth;}
+ 
+
+public   	 int getToDoYear (){ return dueYear;}
+ 
+
+
+	  
+		     
+	  // one line print of  fields
 	  
 	  public  String toString() {
 		  
 	  
-	  	return getToDoDesc() + "  "
-	  			
-	   +  getToDoEnteredDt() + " " 
+	  	return   "Have To Do: "  +  getToDoDesc() + "  "
+	  		   
+	  		
+	    + "  Due Month:"  + dueMonth
+	    
+		
+	    + "  Due Day:"	+ dueDay 		
+	    
+	    
+	    + "  Due Year:"  + dueYear
+ 	  	   
 	   
-	   +  todoDueDt;
-	  	
+	  	+ "  Date Entered:"		
+	  			
+	   +  DateUtils.formatDate(getToDoEnteredDt()) ;
+	
 	  }
 	  	
 	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-  
 	
 }
 	

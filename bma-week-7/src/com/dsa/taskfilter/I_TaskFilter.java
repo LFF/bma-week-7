@@ -16,9 +16,12 @@ import com.dsa.todo.HaveTo;
 
 public interface I_TaskFilter {
 	
-
 	
 	public ArrayList<HaveTo> filter(ArrayList<HaveTo> todos, String desc);
+
+
+	public ArrayList<HaveTo> filter(ArrayList<HaveTo> todos, int year, int day, int month);
+	
 	
 
 		

@@ -10,6 +10,10 @@ import java.util.Date;
       // uses overloaded constructor 
      // uses accessor methods
      //  sets up print string
+
+    // uses description   -  description is common to all to dos
+    // uses date   // create date is common to all to dos
+
  
 
 public abstract class ToDo  {
@@ -17,7 +21,7 @@ public abstract class ToDo  {
 	
 	  private      String todoDesc;
 	
-	  private      String todoEnteredDt;
+	  private      Date  todoEnteredDt;
 	  
 	  
 		
@@ -30,7 +34,7 @@ public abstract class ToDo  {
 		 
 	    	this.todoDesc=desc;
 	   
-	    	this.todoEnteredDt= "today";
+	    	this.todoEnteredDt =  new Date () ;
 	    	
 	              };
 	       
@@ -42,23 +46,14 @@ public abstract class ToDo  {
 public   	 String getToDoDesc (){ return todoDesc;}
 	   	 
 public  	 void setToDoDesc (String desc) {todoDesc=desc;}
-	
 
 
-public   	 String getToDoEnteredDt (){ return todoEnteredDt;}
+
+public   	 Date getToDoEnteredDt (){ return todoEnteredDt;}
  
-public  	 void setToDoEnteredDt (String enteredDt) {todoEnteredDt=enteredDt;}
+public  	 void setToDoEnteredDt (Date enteredDt) {todoEnteredDt=enteredDt;}
 
-  
-	
-public  String toString() {
-	return todoDesc + "  "
- +  todoEnteredDt + " ";
-	
+  		
 }
 	
-	
-}
-	
-
 	

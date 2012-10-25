@@ -15,21 +15,47 @@ public class TaskFilter  implements I_TaskFilter {
 	
 
 	@Override
-	public ArrayList<HaveTo> filter(ArrayList<HaveTo> tados, String desc) {
+	public ArrayList<HaveTo> filter(ArrayList<HaveTo> todos, int year, int day, int month) {
 
 		ArrayList<HaveTo> filteredTasks = new ArrayList<HaveTo>();
-	
 		
-		for (HaveTo todo : tados) {
-		
+		for (HaveTo todo : todos) {
 			
-			if (todo.getToDoDesc().contains("urgent!")) {
+			if ( todo.getToDoYear() == year || todo.getToDoDay() == day ||  todo.getToDoMonth() == month ) 
+			
+			{
+				
 				filteredTasks.add(todo);
+				
+				
 			}
 		}
 
 		return filteredTasks;
 	}
 
+	
+	
+	public ArrayList<HaveTo> filter(ArrayList<HaveTo> todos, String desc) {
+
+		ArrayList<HaveTo> filteredTasks = new ArrayList<HaveTo>();
+		
+		for (HaveTo todo : todos) {
+			
+			if (todo.getToDoDesc().contains(desc)  ) 
+			
+			{
+				
+				filteredTasks.add(todo);
+				
+				
+			}
+		}
+
+		return filteredTasks;
+	}
+
+	
+	
 
 }
